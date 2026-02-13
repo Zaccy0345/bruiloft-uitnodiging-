@@ -37,6 +37,24 @@ const translations = {
         'location-name': 'Park De Heerlijkheid',
         'location-address': 'Herikweg 5<br>3193 KC Hoogvliet, Rotterdam,<br>The Netherlands',
         'date-location': 'May 17, 2026'
+    },
+    nl: {
+        'invite-text': 'U BENT HARTELIJK UITGENODIGD OM<BR> HET HUWELIJK VAN ONS TE VIEREN',
+        'celebrate-text': 'WIJ WILLEN U UITNODIGEN OM DE MOOISTE DAG VAN ONS LEVEN MET ONS TE VIEREN. HET ZOU EEN GROTE EER ZIJN ALS U AANWEZIG BENT BIJ DIT BELANGRIJK MOMENT.',
+        'close-btn': 'Sluiten',
+        'reveal': 'Onthullen',
+        'tap-discover': 'TIK OM DE DATUM VAN HET HUWELIJK TE ONTDEKKEN',
+        'getting-married': 'WIJ TROUWEN!',
+        'countdown': 'Aftelklok:',
+        'days': 'DAGEN',
+        'hours': 'UREN',
+        'minutes': 'MINUTEN',
+        'seconds': 'SECONDEN',
+        'until-big-day': 'tot de grote dag!',
+        'celebration-location': 'HET FEEST ZAL PLAATSVINDEN OP',
+        'location-name': 'Park De Heerlijkheid',
+        'location-address': 'Herikweg 5<br>3193 KC Hoogvliet, Rotterdam,<br>Nederland',
+        'date-location': '17 mei 2026'
     }
 };
 
@@ -47,11 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (langToggle) {
         langToggle.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'tr' : 'en';
+            // Cycle through languages: en -> tr -> nl -> en
+            if (currentLanguage === 'en') {
+                currentLanguage = 'tr';
+            } else if (currentLanguage === 'tr') {
+                currentLanguage = 'nl';
+            } else {
+                currentLanguage = 'en';
+            }
             updateLanguage();
             updateToggleButton();
         });
     }
+    
+    // Initialize button
+    updateToggleButton();
 });
 
 function updateLanguage() {
@@ -66,6 +94,12 @@ function updateLanguage() {
 function updateToggleButton() {
     const btn = document.getElementById('langToggle');
     if (btn) {
-        btn.textContent = currentLanguage === 'en' ? '🇹🇷 TR' : '🇬🇧 EN';
+        if (currentLanguage === 'en') {
+            btn.textContent = '🇹🇷 TR';
+        } else if (currentLanguage === 'tr') {
+            btn.textContent = '🇳🇱 NL';
+        } else {
+            btn.textContent = '🇬🇧 EN';
+        }
     }
 }
