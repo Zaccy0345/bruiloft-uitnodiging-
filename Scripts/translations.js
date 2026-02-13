@@ -36,7 +36,7 @@ const translations = {
         'celebration-location': 'KUTLAMA ŞURADA GERÇEKLEŞTİRİLECEK',
         'location-name': 'Park De Heerlijkheid',
         'location-address': 'Herikweg 5<br>3193 KC Hoogvliet, Rotterdam,<br>The Netherlands',
-        'date-location': 'May 17, 2026'
+        'date-location': '17 Mayıs'
     },
     nl: {
         'invite-text': 'U BENT HARTELIJK UITGENODIGD OM<BR> HET HUWELIJK VAN ONS TE VIEREN',
