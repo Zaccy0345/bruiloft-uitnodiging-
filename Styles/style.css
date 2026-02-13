@@ -10,11 +10,23 @@
 /* 2. Namen (iets sierlijker, maar leesbaar) */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+/* CSS Variables voor makkelijk aanpassen */
+:root {
+  --primary-color: #693500;
+  --secondary-color: #f7f1e1;
+  --text-color: #333;
+  --accent-gold: #d4af37;
+}
+
 html, body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 
@@ -94,9 +106,9 @@ html, body {
 }
 
 .close-btn {
-  margin: 30px;
-  padding: 12px 30px;
-  font-size: 16px;
+  margin: clamp(20px, 5vw, 30px);
+  padding: clamp(10px, 2vw, 12px) clamp(20px, 5vw, 30px);
+  font-size: clamp(14px, 3vw, 16px);
   font-family: 'Playfair Display', serif;
   background-color: white;
   color: #693500;
@@ -122,35 +134,35 @@ body html
 .paragraafBeginPagina
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               30px;
+    font-size:                               clamp(20px, 5vw, 30px);
     text-align:                              center;
-
     letter-spacing:                         2px;
-
     color:                                #693500;
     margin: 0;
-    padding-top: 40px;
+    padding-top: clamp(30px, 8vh, 40px);
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .namenVanBruidEnBruidegom
 {
     text-align:                             center;
-    font-size:                              80px;
+    font-size:                              clamp(40px, 12vw, 80px);
     font-weight:                            lighter;
-
     font-family:                           'Great Vibes', cursive;
     letter-spacing:                         2px; 
-
     color:                                 #693500;
+    margin: 20px 0;
+    padding: 0 15px;
 }
 .paragraafBeginPaginaTekst
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               24px;
+    font-size:                               clamp(16px, 4vw, 24px);
     text-align:                              center;
-
     color:                                #693500;
-
     letter-spacing:                         2px;
+    padding: 0 15px 20px 15px;
+    line-height: 1.6;
 }
 
 .close-btn:hover {
@@ -199,14 +211,13 @@ Datum van de bruiloft
 .datumVanDeBruiloftH1
 {
     text-align:                             center;
-    font-size:                              80px;
+    font-size:                              clamp(40px, 10vw, 80px);
     font-weight:                            lighter;
-
     font-family:                           'Great Vibes', cursive;
     letter-spacing:                         3px; 
-
     color:                                 #693500;
     margin: 0;
+    padding: 0 15px;
     opacity: 0;
 }
 
@@ -216,13 +227,11 @@ Datum van de bruiloft
 .paragraafDatumVanDeBruiloft
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               30px;
+    font-size:                               clamp(18px, 5vw, 30px);
     text-align:                              center;
-
-
     letter-spacing:                         2px;
-
     color:                                #693500;
+    padding: 0 15px;
     opacity: 0;
 }
 
@@ -233,9 +242,11 @@ Datum van de bruiloft
 {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    gap: clamp(10px, 5vw, 20px);
+    margin-top: clamp(15px, 4vh, 20px);
     opacity: 0;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
 .datumVanDeBruiloftBolletjes.show {
@@ -252,8 +263,10 @@ Datum van de bruiloft
 
 .datumVanDeBruiloftH2
 {
-    width: 100px;
-    height: 100px;
+    width: clamp(80px, 20vw, 100px);
+    height: clamp(80px, 20vw, 100px);
+    min-width: 70px;
+    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -261,7 +274,7 @@ Datum van de bruiloft
     background-color: #FFFfFC;
     border-radius: 50%;
     border: 3px solid #693500;
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 24px);
     margin: 0;
     color: white;
     transition: all 0.3s ease;
@@ -330,46 +343,51 @@ Datum van de bruiloft
 
 .h1CountDownTimer {
   font-family: 'Great Vibes', cursive;
-  font-size: 60px;
+  font-size: clamp(36px, 10vw, 60px);
   color: #693500;
   font-weight: lighter;
-  margin-bottom: 30px;
+  margin-bottom: clamp(20px, 5vh, 30px);
+  padding: 0 15px;
 }
 
 .countdown-display {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(10px, 3vw, 20px);
   flex-wrap: wrap;
-  margin-top: 80px;
+  margin-top: clamp(40px, 8vh, 80px);
   opacity: 0;
+  padding: 0 15px;
 }
 
 .countdown-box {
   border: 2px solid #693500;
   border-radius: 15px;
-  padding: 20px;
-  min-width: 100px;
+  padding: clamp(15px, 4vw, 20px);
+  min-width: clamp(80px, 20vw, 100px);
   background-color: white;
+  flex: 1 1 clamp(80px, 20vw, 100px);
+  max-width: 120px;
 }
 
 .countdown-display.show .countdown-box {
   animation: fadeInScaleUp 0.6s ease-out forwards;
+}
 
-  font-size: 36px;
+.countdown-number {
+  font-size: clamp(28px, 7vw, 36px);
   font-weight: bold;
   color: #693500;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
-
 
 .countdown-label {
   font-family: 'Playfair Display', serif;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   letter-spacing: 2px;
   color: #693500;
-  margin: 0;
+  margin: 8px 0 0 0;
 }
 .weAreGettingMarried
 {
@@ -465,13 +483,12 @@ Timer van de bruiloft
 .untilBigDay
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               20px;
+    font-size:                               clamp(14px, 4vw, 20px);
     text-align:                              center;
-
     letter-spacing:                         2px;
-
     color:                                #693500;
     opacity: 0;
+    padding: 0 15px;
 }
 
 .untilBigDay.show {
@@ -508,13 +525,12 @@ Timer van de bruiloft
 .locationParagraaf
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               24px;
+    font-size:                               clamp(18px, 5vw, 24px);
     text-align:                              center;
-
     letter-spacing:                         2px;
-
     color:                                #693500;
     opacity: 0;
+    padding: 0 15px;
 }
 
 .locationParagraaf.show {
@@ -523,14 +539,14 @@ Timer van de bruiloft
 .locationNaam
 {
     text-align:                             center;
-    font-size:                              60px;
+    font-size:                              clamp(35px, 10vw, 60px);
     font-weight: bolder;
-
     font-family:                           'Great Vibes', cursive;
     letter-spacing:                         3px; 
-
     color:                                 #693500;
     opacity: 0;
+    padding: 0 15px;
+    margin: 20px 0;
 }
 
 .locationNaam.show {
@@ -539,14 +555,14 @@ Timer van de bruiloft
 .straatNaameVilla
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               34px;
+    font-size:                               clamp(18px, 5vw, 34px);
     font-weight: bold;
     text-align:                              center;
-
     letter-spacing:                         2px;
-
     color:                                grey;
     opacity: 0;
+    padding: 0 15px;
+    line-height: 1.8;
 }
 
 .straatNaameVilla.show {
@@ -555,15 +571,16 @@ Timer van de bruiloft
 .datumVanDeBruiloftLocation
 {
     text-align:                             center;
-    font-size:                              44px;
+    font-size:                              clamp(24px, 6vw, 44px);
     font-weight:                            bold;
-    padding-top:                            60px;
-
+    padding-top:                            clamp(30px, 6vh, 60px);
     font-family:                             'Playfair Display', serif;
     letter-spacing:                         3px; 
-
     color:                                 darkslategrey;
     opacity: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
 }
 
 .datumVanDeBruiloftLocation.show {
@@ -573,19 +590,20 @@ Timer van de bruiloft
 /* Language Toggle Button */
 .language-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 15px;
+    top: clamp(10px, 2vh, 20px);
+    right: clamp(10px, 2vw, 20px);
+    padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 15px);
     background: linear-gradient(135deg, #d4af37, #f0e68c);
     border: 2px solid #8b6f47;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     font-weight: bold;
     cursor: pointer;
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     font-family: 'Playfair Display', serif;
+    white-space: nowrap;
 }
 
 .language-toggle:hover {
@@ -596,6 +614,193 @@ Timer van de bruiloft
 
 .language-toggle:active {
     transform: scale(0.98);
+}
+
+/* ===============================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   =============================================== */
+
+/* Mobile First - Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .datumVanDeBruiloftDiv {
+        padding: 60px 15px 20px 15px;
+    }
+    
+    .countdown-timer {
+        padding: 20px 15px;
+    }
+    
+    .countdown-display .show .countdown-box:nth-child(n) {
+        flex: 1 1 calc(50% - 10px);
+        max-width: none;
+    }
+    
+    .curtain {
+        font-size: 24px;
+    }
+    
+    .venue-illustration {
+        width: 95% !important;
+    }
+}
+
+/* Small Devices (481px - 768px) */
+@media (max-width: 768px) {
+    .datumVanDeBruiloftDiv {
+        padding: 80px 20px 30px 20px;
+    }
+    
+    .countdown-timer {
+        padding: 30px 20px;
+    }
+    
+    .countdown-display .show .countdown-box:nth-child(n) {
+        flex: 0 1 auto;
+        min-width: clamp(75px, 18vw, 95px);
+        max-width: 110px;
+    }
+    
+    .curtain {
+        font-size: 28px;
+    }
+    
+    .countdown-number {
+        font-size: clamp(28px, 6vw, 36px);
+    }
+    
+    .beginPagina {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 20px;
+    }
+}
+
+/* Medium Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .datumVanDeBruiloftDiv {
+        padding: 100px 30px 40px 30px;
+    }
+    
+    .countdown-timer {
+        padding: 40px 30px;
+    }
+    
+    .curtain {
+        font-size: 30px;
+    }
+    
+    .countdown-number {
+        font-size: 32px;
+    }
+}
+
+/* Large Devices (1025px and up) */
+@media (min-width: 1025px) {
+    .datumVanDeBruiloftDiv {
+        padding: 120px 40px 50px 40px;
+    }
+    
+    .countdown-timer {
+        padding: 50px 40px;
+    }
+    
+    .countdown-display .show .countdown-box {
+        min-width: 100px;
+        max-width: 130px;
+    }
+    
+    .curtain {
+        font-size: 32px;
+    }
+    
+    .countdown-number {
+        font-size: 36px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) {
+    .curtain-container {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .datumVanDeBruiloftDiv {
+        padding-top: 80px;
+    }
+}
+
+/* Extra Large Screens (2000px and up) */
+@media (min-width: 2000px) {
+    .datumVanDeBruiloftDiv {
+        padding: 150px 60px 60px 60px;
+    }
+    
+    .countdown-timer {
+        padding: 60px 60px;
+    }
+    
+    .countdown-number {
+        font-size: 42px;
+    }
+}
+
+/* ===============================================
+   ACCESSIBILITY & EXTRA POLISH
+   =============================================== */
+
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure text doesn't break in weird places */
+p {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ensure images and SVG are responsive */
+img, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Better button responsive */
+button {
+    font-size: inherit;
+    cursor: pointer;
+}
+
+/* Prevent text selection on interactive elements */
+.datum-bolletje, .curtain, .language-toggle, .close-btn {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Fix for mobile safari */
+@supports (padding: max(0px)) {
+    .language-toggle {
+        top: max(20px, env(safe-area-inset-top));
+        right: max(20px, env(safe-area-inset-right));
+    }
+}
+
+/* Print styles for responsiveness */
+@media print {
+    .language-toggle,
+    .curtain,
+    .close-btn {
+        display: none;
+    }
 }
 
 
