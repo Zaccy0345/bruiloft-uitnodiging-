@@ -1,0 +1,257 @@
+<!-- 
+ Author: Nazif Rahiq
+ Datum: 9-2-2026
+
+ Bruiloft kaart Izzet
+-->
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruiloft kaart</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="Scripts/scrips.js" defer></script>
+    
+</head>
+<body>
+    <header class="headerForTheLol">
+
+    </header>
+    <div class="curtain-container">
+        <div class="curtain left">✨</div>
+        <div class="curtain right">✨</div>
+        <div class="hidden-content">
+            <div class="beginPagina">
+                <p class="paragraafBeginPagina">
+                    YOU ARE CORDIALLY INVITED TO<BR> CELEBRATE THE WEDDING OF
+                </p>
+                <h1 class="namenVanBruidEnBruidegom">
+                    Sam <br>&<br> Sofia
+                </h1>
+                <p class="paragraafBeginPaginaTekst">
+                    WE WOULD LIKE TO INVITE YOU TO CELEBRATE <br> WITH US THE MOST SPECIAL DAY OF OUR LIVES. IT <br> WOULD BE AN HONOR TO HAVE YOU PRESENT AT <BR> THIS IMPORTANT MOMENT.
+                </p>
+                <button class="close-btn">Sluit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="datumVanDeBruiloftDiv">
+        <h1 class="datumVanDeBruiloftH1">
+            Reveal
+        </h1>
+        <p class="paragraafDatumVanDeBruiloft">
+            TAP TO DISCOVER THE DATE OF THE WEDDING
+        </p>
+
+        <div class="datumVanDeBruiloftBolletjes">
+            <div class="datum-bolletje">
+                <h2 class="datumVanDeBruiloftH2">
+                    10
+                </h2>
+            </div>
+            <div class="datum-bolletje">
+                <h2 class="datumVanDeBruiloftH2">
+                    Sept
+                </h2>
+            </div>
+            <div class="datum-bolletje">
+                <h2 class="datumVanDeBruiloftH2">
+                    2026
+                </h2>
+            </div>
+        </div>
+            <h2 class="weAreGettingMarried">
+                    WE ARE GETTING MARRIED!
+            </h2>
+    </div>
+
+<!-- 
+Countdown timer
+-->
+
+    <div class="countdown-timer">
+        <h1 class="h1CountDownTimer">
+            Countdown Timer:
+        </h1>
+        <div class="countdown-display">
+            <div class="countdown-box">
+                <span class="countdown-number" id="days">0</span>
+                <p class="countdown-label">DAYS</p>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="hours">0</span>
+                <p class="countdown-label">HOURS</p>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="minutes">0</span>
+                <p class="countdown-label">MINUTES</p>
+            </div>
+            <div class="countdown-box">
+                <span class="countdown-number" id="seconds">0</span>
+                <p class="countdown-label">SECONDS</p>
+            </div>
+        </div>
+        <p class="untilBigDay">
+            until the big day!
+        </p>
+
+
+        <div>
+
+            <p class="locationParagraaf">
+                THE CELEBRATION WILL TAKE PLACE AT
+            </p>
+
+        <svg class="venue-illustration" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Sky/Background -->
+            <defs>
+                <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f5f1e8;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#e8dcc8;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <rect width="800" height="400" fill="url(#skyGradient)"/>
+            
+            <!-- Ground -->
+            <ellipse cx="400" cy="420" rx="400" ry="40" fill="#c9b896" opacity="0.4"/>
+            
+            <!-- Left decorative trees -->
+            <ellipse cx="50" cy="330" rx="28" ry="60" fill="#6b8e5f" opacity="0.8"/>
+            <ellipse cx="30" cy="320" rx="20" ry="50" fill="#5a7d4f" opacity="0.8"/>
+            
+            <!-- Right decorative trees -->
+            <ellipse cx="750" cy="330" rx="28" ry="60" fill="#6b8e5f" opacity="0.8"/>
+            <ellipse cx="770" cy="320" rx="20" ry="50" fill="#5a7d4f" opacity="0.8"/>
+            
+            <!-- FOUNTAIN - Main Beautiful Fountain -->
+            <!-- Fountain base -->
+            <ellipse cx="400" cy="380" rx="100" ry="15" fill="#8b7d6b" stroke="#6b5d4f" stroke-width="2"/>
+            <ellipse cx="400" cy="378" rx="98" ry="13" fill="#a0927a"/>
+            
+            <!-- Pool water -->
+            <ellipse cx="400" cy="385" rx="95" ry="20" fill="#89b4d1" opacity="0.6"/>
+            
+            <!-- Fountain middle tier -->
+            <ellipse cx="400" cy="360" rx="70" ry="12" fill="#8b7d6b" stroke="#6b5d4f" stroke-width="1.5"/>
+            <ellipse cx="400" cy="358" rx="68" ry="10" fill="#a0927a"/>
+            
+            <!-- Fountain upper tier -->
+            <ellipse cx="400" cy="335" rx="45" ry="10" fill="#8b7d6b" stroke="#6b5d4f" stroke-width="1.5"/>
+            <ellipse cx="400" cy="333" rx="43" ry="8" fill="#a0927a"/>
+            
+            <!-- Fountain center bowl -->
+            <circle cx="400" cy="325" r="20" fill="#faf8f3" stroke="#8b6f47" stroke-width="1.5"/>
+            
+            <!-- Water cascades (decorative curves) -->
+            <path d="M 385 345 Q 375 365 365 385" fill="none" stroke="#89b4d1" stroke-width="2" opacity="0.5"/>
+            <path d="M 415 345 Q 425 365 435 385" fill="none" stroke="#89b4d1" stroke-width="2" opacity="0.5"/>
+            <path d="M 395 333 Q 385 346 375 365" fill="none" stroke="#89b4d1" stroke-width="1.5" opacity="0.5"/>
+            <path d="M 405 333 Q 415 346 425 365" fill="none" stroke="#89b4d1" stroke-width="1.5" opacity="0.5"/>
+            
+            <!-- Fountain spray effect (water droplets) -->
+            <circle cx="380" cy="365" r="1.5" fill="#62a3c0" opacity="0.7"/>
+            <circle cx="390" cy="370" r="1" fill="#62a3c0" opacity="0.6"/>
+            <circle cx="410" cy="370" r="1" fill="#62a3c0" opacity="0.6"/>
+            <circle cx="420" cy="365" r="1.5" fill="#62a3c0" opacity="0.7"/>
+            <circle cx="395" cy="375" r="1" fill="#62a3c0" opacity="0.5"/>
+            <circle cx="405" cy="375" r="1" fill="#62a3c0" opacity="0.5"/>
+            
+            <!-- Main Grand Entrance/Portico (raised from ground) -->
+            <rect x="250" y="260" width="300" height="140" fill="#faf8f3" stroke="#8b6f47" stroke-width="3"/>
+            
+            <!-- Elegant pediment/roof -->
+            <polygon points="250,260 400,160 550,260" fill="#9d8b7a"/>
+            <polygon points="260,255 400,180 540,255" fill="#b5a596"/>
+            
+            <!-- Roof ornament -->
+            <circle cx="400" cy="155" r="6" fill="#d4af37" opacity="0.8"/>
+            
+            <!-- Entrance columns -->
+            <rect x="280" y="280" width="18" height="120" fill="#e8dcc8" stroke="#8b6f47" stroke-width="2"/>
+            <rect x="502" y="280" width="18" height="120" fill="#e8dcc8" stroke="#8b6f47" stroke-width="2"/>
+            
+            <!-- Column capitals (Corinthian style) -->
+            <polygon points="275,275 323,275 325,280 273,280" fill="#8b6f47"/>
+            <polygon points="497,275 545,275 547,280 495,280" fill="#8b6f47"/>
+            
+            <!-- Bases -->
+            <polygon points="275,398 323,398 325,405 273,405" fill="#8b6f47"/>
+            <polygon points="497,398 545,398 547,405 495,405" fill="#8b6f47"/>
+            
+            <!-- Grand entrance door -->
+            <rect x="360" y="280" width="80" height="120" fill="#5a4a3a" stroke="#8b6f47" stroke-width="2" rx="3"/>
+            
+            <!-- Door panels -->
+            <rect x="365" y="285" width="33" height="55" fill="#6b5444" stroke="#8b6f47" stroke-width="1" rx="1"/>
+            <rect x="402" y="285" width="33" height="55" fill="#6b5444" stroke="#8b6f47" stroke-width="1" rx="1"/>
+            <rect x="365" y="345" width="33" height="50" fill="#6b5444" stroke="#8b6f47" stroke-width="1" rx="1"/>
+            <rect x="402" y="345" width="33" height="50" fill="#6b5444" stroke="#8b6f47" stroke-width="1" rx="1"/>
+            
+            <!-- Door handle (gold) -->
+            <circle cx="440" cy="340" r="2.5" fill="#d4af37"/>
+            
+            <!-- Upper windows of main entrance -->
+            <rect x="305" y="195" width="38" height="35" fill="#cde8f0" stroke="#8b6f47" stroke-width="2" rx="2"/>
+            <rect x="457" y="195" width="38" height="35" fill="#cde8f0" stroke="#8b6f47" stroke-width="2" rx="2"/>
+            
+            <!-- Window details -->
+            <line x1="324" y1="195" x2="324" y2="230" stroke="#8b6f47" stroke-width="0.8"/>
+            <line x1="305" y1="212.5" x2="343" y2="212.5" stroke="#8b6f47" stroke-width="0.8"/>
+            
+            <line x1="476" y1="195" x2="476" y2="230" stroke="#8b6f47" stroke-width="0.8"/>
+            <line x1="457" y1="212.5" x2="495" y2="212.5" stroke="#8b6f47" stroke-width="0.8"/>
+            
+            <!-- Left Wing -->
+            <rect x="80" y="260" width="160" height="140" fill="#faf8f3" stroke="#8b6f47" stroke-width="2.5" rx="2"/>
+            
+            <!-- Left wing roof -->
+            <polygon points="80,260 160,200 240,260" fill="#9d8b7a"/>
+            
+            <!-- Left wing windows - fancy -->
+            <rect x="105" y="290" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="155" y="290" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="105" y="345" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="155" y="345" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            
+            <!-- Right Wing -->
+            <rect x="560" y="260" width="160" height="140" fill="#faf8f3" stroke="#8b6f47" stroke-width="2.5" rx="2"/>
+            
+            <!-- Right wing roof -->
+            <polygon points="560,260 640,200 720,260" fill="#9d8b7a"/>
+            
+            <!-- Right wing windows -->
+            <rect x="585" y="290" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="635" y="290" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="585" y="345" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            <rect x="635" y="345" width="35" height="38" fill="#cde8f0" stroke="#8b6f47" stroke-width="1.5" rx="1"/>
+            
+            <!-- Entrance pathway from fountain -->
+            <path d="M 400 400 L 395 360 L 405 360" fill="#d4a574" opacity="0.4"/>
+            
+            <!-- Decorative lights on the building -->
+            <circle cx="280" cy="265" r="3" fill="#ffd700" opacity="0.7"/>
+            <circle cx="520" cy="265" r="3" fill="#ffd700" opacity="0.7"/>
+            <circle cx="110" cy="258" r="2" fill="#ffd700" opacity="0.6"/>
+            <circle cx="690" cy="258" r="2" fill="#ffd700" opacity="0.6"/>
+        </svg>
+
+        <h1 class="locationNaam">
+            Villa Medicea di Artimnio
+        </h1>
+        <p class="straatNaameVilla">
+            Via di Artimino, 59015 <br> Carmignano PO, Italy
+        </p>
+        <h2 class="datumVanDeBruiloftLocation">
+            September 10, 2026
+        </h2>
+        <h3 class="receptionToFollow">
+          Reception to Follow  
+        </h3>
+    </div>
+
+</body>
+</html>
