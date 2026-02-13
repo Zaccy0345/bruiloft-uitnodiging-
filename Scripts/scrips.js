@@ -28,24 +28,33 @@ datumBolletjes.forEach(bolletje => {
   });
 });
 
-// Scroll animation voor "until the big day!"
-const untilBigDayText = document.querySelector('.untilBigDay');
-
-const observer = new IntersectionObserver((entries) => {
+// Scroll animations met IntersectionObserver
+const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      entry.target.classList.add('show');
+      // Optional: stop observing after animation
+      scrollObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-if (untilBigDayText) {
-  observer.observe(untilBigDayText);
-}
+// Voeg alle elementen toe die moeten animeren
+const elementsToAnimate = document.querySelectorAll(
+  '.datumVanDeBruiloftH1, .paragraafDatumVanDeBruiloft, .datumVanDeBruiloftBolletjes, ' +
+  '.h1CountDownTimer, .countdown-display, .untilBigDay, ' +
+  '.locationParagraaf, .venue-illustration, .locationNaam, .straatNaameVilla, ' +
+  '.datumVanDeBruiloftLocation'
+);
+
+elementsToAnimate.forEach(element => {
+  scrollObserver.observe(element);
+});
 
 // Countdown Timer
 function updateCountdown() {
-  const weddingDate = new Date('2026-09-10').getTime();
+  const weddingDate = new Date('2026-05-17').getTime();
   
   setInterval(function() {
     const now = new Date().getTime();

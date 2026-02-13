@@ -40,12 +40,23 @@ html, body {
   height: 100%;
   background: linear-gradient(to right, #8b0000, #a52a2a);
   cursor: pointer;
-  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), background 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
   user-select: none;
+}
+
+.curtain:hover {
+  background: linear-gradient(to right, #c41e3a, #d63856);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.curtain:hover::before {
+  content: '✨';
+  position: absolute;
+  animation: twinkle 0.6s ease-in-out infinite;
 }
 
 .curtain.left {
@@ -163,6 +174,28 @@ Datum van de bruiloft
   height: auto;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
 .datumVanDeBruiloftH1
 {
     text-align:                             center;
@@ -174,6 +207,11 @@ Datum van de bruiloft
 
     color:                                 #693500;
     margin: 0;
+    opacity: 0;
+}
+
+.datumVanDeBruiloftH1.show {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 .paragraafDatumVanDeBruiloft
 {
@@ -185,6 +223,11 @@ Datum van de bruiloft
     letter-spacing:                         2px;
 
     color:                                #693500;
+    opacity: 0;
+}
+
+.paragraafDatumVanDeBruiloft.show {
+    animation: fadeInUp 0.8s ease-out 0.1s forwards;
 }
 .datumVanDeBruiloftBolletjes
 {
@@ -192,6 +235,11 @@ Datum van de bruiloft
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    opacity: 0;
+}
+
+.datumVanDeBruiloftBolletjes.show {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 .datum-bolletje {
     cursor: pointer;
@@ -234,6 +282,53 @@ Datum van de bruiloft
 }
 
 .h1CountDownTimer {
+  opacity: 0;
+}
+
+.h1CountDownTimer.show {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.countdown-display {
+  opacity: 0;
+}
+
+.countdown-display.show {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.countdown-box {
+  animation: fadeInScaleUp 0.6s ease-out forwards;
+}
+
+.countdown-display.show .countdown-box:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.countdown-display.show .countdown-box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.countdown-display.show .countdown-box:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.countdown-display.show .countdown-box:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.h1CountDownTimer {
   font-family: 'Great Vibes', cursive;
   font-size: 60px;
   color: #693500;
@@ -247,6 +342,7 @@ Datum van de bruiloft
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 80px;
+  opacity: 0;
 }
 
 .countdown-box {
@@ -257,13 +353,16 @@ Datum van de bruiloft
   background-color: white;
 }
 
-.countdown-number {
+.countdown-display.show .countdown-box {
+  animation: fadeInScaleUp 0.6s ease-out forwards;
+
   font-size: 36px;
   font-weight: bold;
   color: #693500;
   display: block;
   margin-bottom: 10px;
 }
+
 
 .countdown-label {
   font-family: 'Playfair Display', serif;
@@ -293,6 +392,60 @@ Datum van de bruiloft
     pointer-events: auto;
 }
 
+/* Scroll Animation Classes */
+.scroll-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.scroll-fade-in.show {
+    opacity: 1;
+}
+
+.scroll-slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-scale-in.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 /*
 Timer van de bruiloft
@@ -319,11 +472,10 @@ Timer van de bruiloft
 
     color:                                #693500;
     opacity: 0;
-    transition: opacity 0.8s ease;
 }
 
-.untilBigDay.visible {
-    opacity: 1;
+.untilBigDay.show {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* Venue Illustration */
@@ -335,7 +487,11 @@ Timer van de bruiloft
     margin: 40px auto;
     display: block;
     filter: drop-shadow(0 4px 8px rgba(139, 111, 71, 0.2));
-    animation: slideInVenue 0.8s ease-out;
+    opacity: 0;
+}
+
+.venue-illustration.show {
+    animation: slideInVenue 0.8s ease-out forwards;
 }
 
 @keyframes slideInVenue {
@@ -358,6 +514,11 @@ Timer van de bruiloft
     letter-spacing:                         2px;
 
     color:                                #693500;
+    opacity: 0;
+}
+
+.locationParagraaf.show {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 .locationNaam
 {
@@ -365,26 +526,36 @@ Timer van de bruiloft
     font-size:                              60px;
     font-weight: bolder;
 
-    font-family:                            'Playfair Display', serif;
+    font-family:                           'Great Vibes', cursive;
     letter-spacing:                         3px; 
 
     color:                                 #693500;
+    opacity: 0;
+}
+
+.locationNaam.show {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 .straatNaameVilla
 {
     font-family:                             'Playfair Display', serif;
-    font-size:                               24px;
+    font-size:                               34px;
     font-weight: bold;
     text-align:                              center;
 
     letter-spacing:                         2px;
 
     color:                                grey;
+    opacity: 0;
+}
+
+.straatNaameVilla.show {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 .datumVanDeBruiloftLocation
 {
     text-align:                             center;
-    font-size:                              34px;
+    font-size:                              44px;
     font-weight:                            bold;
     padding-top:                            60px;
 
@@ -392,16 +563,39 @@ Timer van de bruiloft
     letter-spacing:                         3px; 
 
     color:                                 darkslategrey;
+    opacity: 0;
 }
-.receptionToFollow
-{
-    font-family:                           'Great Vibes', cursive;
-    font-size:                               60px;
-    text-align:                              center;
-    padding-top:                            80px;
 
-    letter-spacing:                         2px;
-
-    color:                                #693500;
+.datumVanDeBruiloftLocation.show {
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
+
+/* Language Toggle Button */
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #d4af37, #f0e68c);
+    border: 2px solid #8b6f47;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Playfair Display', serif;
+}
+
+.language-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #e6c200, #ffd700);
+}
+
+.language-toggle:active {
+    transform: scale(0.98);
+}
+
 

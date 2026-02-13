@@ -14,9 +14,13 @@
     <link rel="stylesheet" href="Styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="Scripts/scrips.js" defer></script>
+    <script src="Scripts/translations.js" defer></script>
     
 </head>
 <body>
+    <!-- Taalwissel button -->
+    <button class="language-toggle" id="langToggle">🇹🇷 TR</button>
+
     <header class="headerForTheLol">
 
     </header>
@@ -25,37 +29,37 @@
         <div class="curtain right">✨</div>
         <div class="hidden-content">
             <div class="beginPagina">
-                <p class="paragraafBeginPagina">
+                <p class="paragraafBeginPagina" data-i18n="invite-text">
                     YOU ARE CORDIALLY INVITED TO<BR> CELEBRATE THE WEDDING OF
                 </p>
                 <h1 class="namenVanBruidEnBruidegom">
-                    Sam <br>&<br> Sofia
+                    Tevfik Toprak <br>&<br> Elif Karatepe
                 </h1>
-                <p class="paragraafBeginPaginaTekst">
+                <p class="paragraafBeginPaginaTekst" data-i18n="celebrate-text">
                     WE WOULD LIKE TO INVITE YOU TO CELEBRATE <br> WITH US THE MOST SPECIAL DAY OF OUR LIVES. IT <br> WOULD BE AN HONOR TO HAVE YOU PRESENT AT <BR> THIS IMPORTANT MOMENT.
                 </p>
-                <button class="close-btn">Sluit</button>
+                <button class="close-btn" data-i18n="close-btn">Close</button>
             </div>
         </div>
     </div>
 
     <div class="datumVanDeBruiloftDiv">
-        <h1 class="datumVanDeBruiloftH1">
+        <h1 class="datumVanDeBruiloftH1" data-i18n="reveal">
             Reveal
         </h1>
-        <p class="paragraafDatumVanDeBruiloft">
+        <p class="paragraafDatumVanDeBruiloft" data-i18n="tap-discover">
             TAP TO DISCOVER THE DATE OF THE WEDDING
         </p>
 
         <div class="datumVanDeBruiloftBolletjes">
             <div class="datum-bolletje">
                 <h2 class="datumVanDeBruiloftH2">
-                    10
+                    17
                 </h2>
             </div>
             <div class="datum-bolletje">
                 <h2 class="datumVanDeBruiloftH2">
-                    Sept
+                    May
                 </h2>
             </div>
             <div class="datum-bolletje">
@@ -64,7 +68,7 @@
                 </h2>
             </div>
         </div>
-            <h2 class="weAreGettingMarried">
+            <h2 class="weAreGettingMarried" data-i18n="getting-married">
                     WE ARE GETTING MARRIED!
             </h2>
     </div>
@@ -74,35 +78,35 @@ Countdown timer
 -->
 
     <div class="countdown-timer">
-        <h1 class="h1CountDownTimer">
+        <h1 class="h1CountDownTimer" data-i18n="countdown">
             Countdown Timer:
         </h1>
         <div class="countdown-display">
             <div class="countdown-box">
                 <span class="countdown-number" id="days">0</span>
-                <p class="countdown-label">DAYS</p>
+                <p class="countdown-label" data-i18n="days">DAYS</p>
             </div>
             <div class="countdown-box">
                 <span class="countdown-number" id="hours">0</span>
-                <p class="countdown-label">HOURS</p>
+                <p class="countdown-label" data-i18n="hours">HOURS</p>
             </div>
             <div class="countdown-box">
                 <span class="countdown-number" id="minutes">0</span>
-                <p class="countdown-label">MINUTES</p>
+                <p class="countdown-label" data-i18n="minutes">MINUTES</p>
             </div>
             <div class="countdown-box">
                 <span class="countdown-number" id="seconds">0</span>
-                <p class="countdown-label">SECONDS</p>
+                <p class="countdown-label" data-i18n="seconds">SECONDS</p>
             </div>
         </div>
-        <p class="untilBigDay">
+        <p class="untilBigDay" data-i18n="until-big-day">
             until the big day!
         </p>
 
 
         <div>
 
-            <p class="locationParagraaf">
+            <p class="locationParagraaf" data-i18n="celebration-location">
                 THE CELEBRATION WILL TAKE PLACE AT
             </p>
 
@@ -239,18 +243,18 @@ Countdown timer
             <circle cx="690" cy="258" r="2" fill="#ffd700" opacity="0.6"/>
         </svg>
 
-        <h1 class="locationNaam">
-            Villa Medicea di Artimnio
+        <h1 class="locationNaam" data-i18n="location-name">
+            Park De Heerlijkheid
         </h1>
-        <p class="straatNaameVilla">
-            Via di Artimino, 59015 <br> Carmignano PO, Italy
+        <p class="straatNaameVilla" data-i18n="location-address">
+           Herikweg 5<br>
+           3193 KC Hoogvliet, Rotterdam,<br>
+           The Netherlands
         </p>
-        <h2 class="datumVanDeBruiloftLocation">
-            September 10, 2026
+        <h2 class="datumVanDeBruiloftLocation" data-i18n="date-location">
+            May 17, 2026
         </h2>
-        <h3 class="receptionToFollow">
-          Reception to Follow  
-        </h3>
+
     </div>
 
 </body>
